@@ -1,0 +1,3 @@
+data_file: sample.txt
+decimal_format: #.###
+data_types: Time, Score,
