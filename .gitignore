@@ -37,3 +37,6 @@ build/
 bin/
 gen/
 gradle.properties
+gradle/
+gradlew
+gradlew.*
