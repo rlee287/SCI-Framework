@@ -2,31 +2,36 @@ package sci.modules;
 
 import java.util.ArrayList;
 
+/**
+ * Interface of a Module object, which handles given user-inputted commands.
+ * @author Squeakadoodle
+ *
+ */
 public interface Module {
 	
 	/**
-	 * A getter for the command used to invoke this module.
-	 * @return A String containing a word used to invoke this module.
+	 * Get the command used to invoke this module.
+	 * @return String containing a word used to invoke this module.
 	 */
 	public String getInvoker();
 	
 	/**
-	 * A getter for what this module will be referred to in the code.
-	 * @return A String representation of this module to use when referencing this Module in the code.
+	 * Get what this module will be referred to in the code.
+	 * @return String representation of this module to use when referencing this Module in the code.
 	 */
 	public String getName();
 	
 	/**
-	 * The documentation for how this module should be used.
+	 * Get the documentation for how this module should be used.
 	 * @return String detailing the specifications of this Module. Invoked by the default included HelpModule.
 	 */
 	public String getHelpDoc();
 	
 	/**
-	 * Processes the given user input to execute commands and produce a String output.
+	 * Process the given user input to execute commands and produce a String output.
 	 * @param line String which represents the unaltered user input.
 	 * @param tokens ArrayList of Strings for each 'word' in the user input, obtained by space-delimiting the input String.
-	 * @return
+	 * @return String response to output to the user.
 	 */
 	public String process(String line, ArrayList<String> tokens);
 }

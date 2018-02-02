@@ -5,10 +5,19 @@ import java.util.Comparator;
 import scilib.objects.Sorter;
 import scilib.objects.TeamData;
 
+/**
+ * Comparator to compare two TeamData objects.
+ * @author Squeakadoodle
+ *
+ */
 public class TeamDataComparator implements Comparator<TeamData> {
 
 	private Sorter sorter;
 	
+	/**
+	 * Construct a TeamDataComparator given a Sorter object as a parameter.
+	 * @param sorter Sorter object to dictate what value to compare the TeamDataObjects by.
+	 */
 	public TeamDataComparator(Sorter sorter) {
 		this.sorter = sorter;
 	}

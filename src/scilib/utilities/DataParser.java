@@ -7,14 +7,27 @@ import java.util.Scanner;
 import sci.SCI;
 import scilib.objects.TeamData;
 
+/**
+ * Parser which takes data from a file to create TeamData objects.
+ * @author Squeakadoodle
+ *
+ */
 public class DataParser {
 	
 	private static FileConverter fc;
 	
+	/**
+	 * Construct a DataParser object.
+	 */
 	public DataParser() {
 		fc = new FileConverter();
 	}
 	
+	/**
+	 * Generate a list of TeamData objects from a text file.
+	 * @param fileName String name of the text file to retrieve information from.
+	 * @return ArrayList of TeamData objects generated from the given text file.
+	 */
 	public ArrayList<TeamData> process(String fileName) {
 		ArrayList<TeamData> teams = new ArrayList<TeamData>();
 		HashMap<String, ArrayList<Double>> data = new HashMap<String, ArrayList<Double>>();
@@ -56,7 +69,7 @@ public class DataParser {
 		return teams;
 	}
 	
-	public ArrayList<Double> parse(String dataType, String line) {
+	private ArrayList<Double> parse(String dataType, String line) {
 		ArrayList<Double> parseData = new ArrayList<Double>();
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(line);

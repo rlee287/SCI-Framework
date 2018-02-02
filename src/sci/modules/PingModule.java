@@ -2,6 +2,12 @@ package sci.modules;
 
 import java.util.ArrayList;
 
+/**
+ * Default module which only exists for debugging purposes.
+ * It responds with "pong" when the command "ping" is invoked.
+ * @author Squeakadoodle
+ *
+ */
 public class PingModule implements Module {
 	
 	@Override

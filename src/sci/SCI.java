@@ -14,7 +14,7 @@ import scilib.utilities.DataParser;
 import scilib.utilities.Tokenizer;
 
 public class SCI {
-
+	
 	private static ArrayList<TeamData> masterList;
 	
 	public static Configuration configuration;

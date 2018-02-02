@@ -2,6 +2,11 @@ package scilib.checkers;
 
 import scilib.objects.TeamData;
 
+/**
+ * Checker which tests if a TeamData object meets a given condition.
+ * @author Squeakadoodle
+ *
+ */
 public class Condition implements Checker {
 
 	private enum Operator {
@@ -18,6 +23,12 @@ public class Condition implements Checker {
 	public Operator test;
 	public double target;
 	
+	/**
+	 * Construct a Condition object with a given data parameter, comparison operator, and target value.
+	 * @param dataType String parameter of the data being tested.
+	 * @param operator String representing the operation to test the TeamData object by.
+	 * @param target Double target the TeamData object will be compared against.
+	 */
 	public Condition( String dataType, String operator, double target ) {
 		this.dataType = dataType;
 		if( operator.equals("<") ) {
@@ -40,7 +51,10 @@ public class Condition implements Checker {
 
 	@Override
 	public boolean check(TeamData td) {
-		double value = td.get(dataType);
+		Double value = td.get(dataType);
+		if( value == null ) {
+			return false;
+		}
 		if( test == Operator.LESS ) {
 			return value < target;
 		} else if( test == Operator.LESS_OR_EQUAL ) {

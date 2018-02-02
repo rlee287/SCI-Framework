@@ -3,12 +3,23 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+/**
+ * Converter to turn text files into an ArrayList of Strings.
+ * @author Squeakadoodle
+ *
+ */
 public class FileConverter {
 	
-	public FileConverter() {
-		
-	}
+	/**
+	 * Construct a FileConverter object.
+	 */
+	public FileConverter() {}
 	
+	/**
+	 * Convert a text file into an ArrayList of Strings.
+	 * @param fileName String name of the text file to retrieve information from.
+	 * @return ArrayList of Strings for each line in the text file.
+	 */
 	@SuppressWarnings("resource")
 	public ArrayList<String> convert(String fileName) {
 		ArrayList<String> lines = new ArrayList<String>();
@@ -28,6 +39,11 @@ public class FileConverter {
         return lines;
 	}
 	
+	/**
+	 * Remove all spaces and '%' signs from a String.
+	 * @param input String to compress.
+	 * @return String of the compressed result.
+	 */
 	public String compress(String input) {
 		return input.replace(" ", "").replace("%", "").toLowerCase();
 	}

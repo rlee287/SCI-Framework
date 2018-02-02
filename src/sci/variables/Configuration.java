@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 import scilib.utilities.FileConverter;
 
+/**
+ * Configuration file which serves as a compiler-readable source of variables from the config.txt file.
+ * @author Squeakadoodle
+ *
+ */
 public class Configuration {
 	
 	private FileConverter fc;
@@ -13,18 +18,24 @@ public class Configuration {
 	public String decimalFormat;
 	public ArrayList<String> dataTypes;
 	
+	/**
+	 * Construct a Configuration object, and automatically parses data from the config.txt file.
+	 */
 	public Configuration() {
 		fc = new FileConverter();
-		ArrayList<String> lines = fc.convert("config.txt");
 		
 		dataFile = "";
 		decimalFormat = "";
 		dataTypes = new ArrayList<String>();
 		
-		init(lines);
+		update();
 	}
 	
-	public void init( ArrayList<String> lines ) {
+	/**
+	 * Parse data from the config.txt file, overwriting previous values.
+	 */
+	public void update() {
+		ArrayList<String> lines = fc.convert(dataFile);
 		for( String line : lines ) {
 			if( line.startsWith("data_file: ") ) {
 				line = line.substring(11);
