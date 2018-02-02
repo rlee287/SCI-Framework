@@ -49,7 +49,7 @@ public class DataParser {
 			ArrayList<Double> variableData = data.get(key);
 			for( int f=0; f<variableData.size(); f++ ) {
 				TeamData team = teams.get(f);
-				team.data.put(key, variableData.get(f));
+				team.put(key, variableData.get(f));
 			}
 		}
 		

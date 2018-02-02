@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class TeamData {
 	
 	public String teamNumber;
-	public HashMap<String, Double> data;
+	private HashMap<String, Double> data;
 	
 	public TeamData(String teamNumber) {
 		this.teamNumber = teamNumber;
@@ -13,7 +13,11 @@ public class TeamData {
 	}
 	
 	public Double get(String dataType) {
-		return data.get(dataType);
+		return data.keySet().contains(dataType) ? data.get(dataType) : 0D;
+	}
+	
+	public void put(String dataType, double value) {
+		data.put(dataType, value);
 	}
 	
 }

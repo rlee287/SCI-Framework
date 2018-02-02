@@ -19,13 +19,15 @@ public class SCI {
 	public static Configuration configuration;
 	public static DecimalFormat df;
 	public static Instance instance;
-	public static ArrayList<TeamData> masterList;
-	public static HashMap<String, Module> modules;
+	private static ArrayList<TeamData> masterList;
+	public static HashMap<String, Module> modules; // groups.get("ALL")
+	public static HashMap<String, ArrayList<TeamData>> groups;
 	public static void main(String[] args) {
 		configuration = new Configuration(); // This is initialized in this exact position for a reason;
 		df = new DecimalFormat(configuration.decimalFormat);
 		instance = new Instance(); // This is initialized in this exact position for a reason;
 		modules = new HashMap<String, Module>();
+		groups = new HashMap<String, ArrayList<TeamData>>();
 		init();
 		System.out.println("Type \"help\" to see a list of commands.");
 		@SuppressWarnings("resource")
@@ -63,6 +65,7 @@ public class SCI {
 		DataParser dp = new DataParser();
 		System.out.println("> Loading Data File...");
 		masterList = dp.process(configuration.dataFile);
+		groups.put("ALL", masterList);
 		System.out.println("=> File: " + configuration.dataFile);
 		System.out.println("> Data File loaded!");
 		System.out.println("Initialization complete.");
@@ -89,4 +92,6 @@ public class SCI {
 		System.out.println(response);
 		return live;
 	}
+	
+	
 }
