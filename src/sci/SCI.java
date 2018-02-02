@@ -22,7 +22,7 @@ public class SCI {
 	public static HashMap<String, Module> modules; // groups.get("ALL")
 	public static HashMap<String, ArrayList<TeamData>> groups;
 	public static void main(String[] args) {
-		configuration = new Configuration(); // This is initialized in this exact position for a reason;
+		configuration = new Configuration();
 		df = new DecimalFormat(configuration.decimalFormat);
 		modules = new HashMap<String, Module>();
 		groups = new HashMap<String, ArrayList<TeamData>>();
@@ -54,7 +54,7 @@ public class SCI {
 				e.printStackTrace();
 			}
 
-			if( ( m != null ) ) { // Java does not short-circut, so this is safe
+			if( ( m != null ) ) {
 				System.out.println("=> Loaded module: " + m.getName());
 				modules.put(m.getInvoker(), m);
 			}
