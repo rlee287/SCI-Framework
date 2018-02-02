@@ -15,7 +15,6 @@ public class Condition implements Checker {
 	}
 	
 	public String dataType;
-	public String testString;
 	public Operator test;
 	public double target;
 	

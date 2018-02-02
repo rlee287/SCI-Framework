@@ -9,23 +9,21 @@ import org.reflections.Reflections;
 
 import sci.modules.Module;
 import sci.variables.Configuration;
-import sci.variables.Instance;
 import scilib.objects.TeamData;
 import scilib.utilities.DataParser;
 import scilib.utilities.Tokenizer;
 
 public class SCI {
 
+	private static ArrayList<TeamData> masterList;
+	
 	public static Configuration configuration;
 	public static DecimalFormat df;
-	public static Instance instance;
-	private static ArrayList<TeamData> masterList;
 	public static HashMap<String, Module> modules; // groups.get("ALL")
 	public static HashMap<String, ArrayList<TeamData>> groups;
 	public static void main(String[] args) {
 		configuration = new Configuration(); // This is initialized in this exact position for a reason;
 		df = new DecimalFormat(configuration.decimalFormat);
-		instance = new Instance(); // This is initialized in this exact position for a reason;
 		modules = new HashMap<String, Module>();
 		groups = new HashMap<String, ArrayList<TeamData>>();
 		init();
@@ -72,7 +70,7 @@ public class SCI {
 	}
 
 	public static void shutdown() {
-		
+		// TODO: Close all GUIs
 	}
 	
 	public static boolean run(String line) { 

@@ -9,9 +9,10 @@ import scilib.utilities.TeamDataComparator;
 
 public class Group {
 	
-	public String name;
 	private ArrayList<TeamData> originalList;
 	private ArrayList<TeamData> currentList;
+	
+	public String name;
 	public Sorter sorter;
 	public Filter filter;
 	
@@ -20,11 +21,30 @@ public class Group {
 	}
 	
 	public Group(String name, ArrayList<TeamData> list) {
-		this.name = name;
 		this.originalList = new ArrayList<TeamData>(list);
 		this.currentList = new ArrayList<TeamData>(list);
+		
+		this.name = name;
 		this.sorter = new Sorter();
 		this.filter = new Filter();
+	}
+	
+	public ArrayList<TeamData> getTeamList() {
+		update();
+		return new ArrayList<TeamData>(currentList);
+	}
+	
+	public ArrayList<TeamData> getTeamPool() {
+		return new ArrayList<TeamData>(originalList);
+	}
+	
+	public boolean teamListContains(TeamData td) {
+		update();
+		return currentList.contains(td);
+	}
+	
+	public boolean teamPoolContains(TeamData td) {
+		return originalList.contains(td);
 	}
 	
 	public boolean addAll(Collection<TeamData> teamDataCollection) {
@@ -62,23 +82,6 @@ public class Group {
 	
 	public void clear() {
 		originalList = new ArrayList<TeamData>();
-	}
-	
-	public ArrayList<TeamData> getTeamList() {
-		update();
-		return new ArrayList<TeamData>(currentList);
-	}
-	
-	public ArrayList<TeamData> getTeamPool() {
-		return new ArrayList<TeamData>(originalList);
-	}
-	
-	public boolean teamListContains(TeamData td) {
-		return currentList.contains(td);
-	}
-	
-	public boolean teamPoolContains(TeamData td) {
-		return originalList.contains(td);
 	}
 	
 	private void update() {

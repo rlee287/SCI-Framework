@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import sci.SCI;
 
 public class HelpModule implements Module {
-	// A pre-included module that you're best off not removing.
 	
 	public HelpModule() {}
 	
@@ -15,6 +14,17 @@ public class HelpModule implements Module {
 	@Override
 	public String getName() {return "Help Module";}
 
+	@Override
+	public String getHelpDoc() {
+		String response = "";
+		response += "___[Help] Usage___";
+		response += "\nThe 'help' command gives details on how to use the ScoutingComputerInterface.";
+		response += "\n\thelp\t\tReturns a list of valid commands.";
+		response += "\n\thelp [command]\tGives detailed information about a command.";
+		response += "\n------------------";
+		return response;
+	}
+	
 	@Override
 	public String process(String line, ArrayList<String> tokens) {
 		String response = "";
@@ -36,17 +46,6 @@ public class HelpModule implements Module {
 				response += "\nType \"help\" to see a list of commands.";
 			}
 		}
-		return response;
-	}
-
-	@Override
-	public String getHelpDoc() {
-		String response = "";
-		response += "___[Help] Usage___";
-		response += "\nThe 'help' command gives details on how to use the ScoutingComputerInterface.";
-		response += "\n\thelp\t\tReturns a list of valid commands.";
-		response += "\n\thelp [command]\tGives detailed information about a command.";
-		response += "\n------------------";
 		return response;
 	}
 }

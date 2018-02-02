@@ -13,43 +13,6 @@ public class Filter implements Checker {
 		checkers = new ArrayList<Checker>();
 	}
 	
-	public boolean add(Collection<Checker> checkList) {
-		boolean success = false;
-		for( Checker c : checkList ) {
-			success |= add(c);
-		}
-		return success;
-	}
-	
-	public boolean add(Checker c) {
-		if( !contains(c) ) {
-			checkers.add(c);
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	public boolean remove(Checker c) {
-		return checkers.remove(c);
-	}
-	
-	public void reset() {
-		checkers.clear();
-	}
-	
-	private boolean contains(Checker c) {
-		for( Checker check : checkers ) {
-			if( check.equals(c) ) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public ArrayList<Checker> getCheckers() {
-		return new ArrayList<Checker>(checkers);
-	}
 	
 	@Override
 	public boolean check(TeamData td) {
@@ -78,5 +41,43 @@ public class Filter implements Checker {
 			ret += "\n" + check.toString();
 		}
 		return ret;
+	}
+	
+	public ArrayList<Checker> getCheckers() {
+		return new ArrayList<Checker>(checkers);
+	}
+	
+	private boolean contains(Checker c) {
+		for( Checker check : checkers ) {
+			if( check.equals(c) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean add(Collection<Checker> checkList) {
+		boolean success = false;
+		for( Checker c : checkList ) {
+			success |= add(c);
+		}
+		return success;
+	}
+	
+	public boolean add(Checker c) {
+		if( !contains(c) ) {
+			checkers.add(c);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean remove(Checker c) {
+		return checkers.remove(c);
+	}
+	
+	public void reset() {
+		checkers.clear();
 	}
 }

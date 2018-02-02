@@ -8,6 +8,7 @@ public class FileConverter {
 	public FileConverter() {
 		
 	}
+	
 	@SuppressWarnings("resource")
 	public ArrayList<String> convert(String fileName) {
 		ArrayList<String> lines = new ArrayList<String>();

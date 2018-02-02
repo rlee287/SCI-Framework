@@ -4,12 +4,14 @@ import java.util.HashMap;
 
 public class TeamData {
 	
-	public String teamNumber;
 	private HashMap<String, Double> data;
 	
+	public String teamNumber;
+	
 	public TeamData(String teamNumber) {
-		this.teamNumber = teamNumber;
 		data = new HashMap<String, Double>();
+
+		this.teamNumber = teamNumber;
 	}
 	
 	public Double get(String dataType) {
