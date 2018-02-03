@@ -15,7 +15,7 @@ public class Filter implements Checker {
 	private ArrayList<Checker> checkers;
 	
 	/**
-	 * Construct a Filter object with an empty list of Checker objects.
+	 * Creates a Filter object with an empty list of Checker objects.
 	 */
 	public Filter() {
 		checkers = new ArrayList<Checker>();
@@ -51,17 +51,17 @@ public class Filter implements Checker {
 	}
 	
 	/**
-	 * Get a list of Checker objects in this Filter.
-	 * @return Shallow copy of the ArrayList of Checker objects in this Filter.
+	 * Gets a list of Checker objects in this Filter.
+	 * @return a shallow copy of the ArrayList of Checker objects in this Filter.
 	 */
 	public ArrayList<Checker> getCheckers() {
 		return new ArrayList<Checker>(checkers);
 	}
 	
 	/**
-	 * Test if a Checker object is already a part of this Filter.
-	 * @param c Checker object to be tested for.
-	 * @return Boolean value representing if the Checker is already part of this Filter.
+	 * Tests if a Checker object is already a part of this Filter.
+	 * @param c - Checker object to be tested for
+	 * @return true if the given Checker is already part of this Filter.
 	 */
 	private boolean contains(Checker c) {
 		for( Checker check : checkers ) {
@@ -73,9 +73,9 @@ public class Filter implements Checker {
 	}
 	
 	/**
-	 * Add a Collection of Checker objects to this Filter.
-	 * @param checkList Collection of Checker objects to add.
-	 * @return Boolean value indicating whether the list of Checker objects in this Filter was modified.
+	 * Adds a Collection of Checker objects to this Filter.
+	 * @param checkList - Collection of Checker objects to add
+	 * @return true if the list of Checker objects in this Filter was modified.
 	 */
 	public boolean addAll(Collection<Checker> checkList) {
 		boolean success = false;
@@ -86,9 +86,9 @@ public class Filter implements Checker {
 	}
 	
 	/**
-	 * Add a Checker object to this Filter.
-	 * @param c Checker object to add.
-	 * @return Boolean value indicating whether the list of Checker objects in this Filter was modified.
+	 * Adds a Checker object to this Filter.
+	 * @param c - Checker object to add
+	 * @return true if the list of Checker objects in this Filter was modified.
 	 */
 	public boolean add(Checker c) {
 		if( !contains(c) ) {
@@ -100,16 +100,16 @@ public class Filter implements Checker {
 	}
 	
 	/**
-	 * Remove a Checker object from this Filter.
-	 * @param c Checker object to remove.
-	 * @return Boolean value indicating whether the list of Checker objects in this Filter was modified.
+	 * Removes a Checker object from this Filter.
+	 * @param c - Checker object to remove
+	 * @return true if the list of Checker objects in this Filter was modified.
 	 */
 	public boolean remove(Checker c) {
 		return checkers.remove(c);
 	}
 	
 	/**
-	 * Remove all Checker objects from this Filter.
+	 * Removes all Checker objects from this Filter.
 	 */
 	public void reset() {
 		checkers.clear();

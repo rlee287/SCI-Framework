@@ -10,29 +10,29 @@ import scilib.objects.TeamData;
 public interface Checker {
 	
 	/**
-	 * Test if the given TeamData object meets this Checker's condition.
-	 * @param td TeamData object to be checked against this Checker.
-	 * @return Boolean result of whether this TeamData meets this Checker's condition.
+	 * Tests if the given TeamData object meets this Checker's condition.
+	 * @param td - TeamData object to be checked against this Checker
+	 * @return true if the given TeamData meets this Checker's condition.
 	 */
 	public boolean check(TeamData td);
 	
 	/**
-	 * Test if this Checker is equal to another Checker.
-	 * @param c Checker input to test against.
-	 * @return Boolean result of whether the given Checker and this Checker are equal.
+	 * Tests if this Checker is equal to another Checker.
+	 * @param c - Checker input to test against
+	 * @return true if the given Checker is equal to this checker.
 	 */
 	public boolean equals(Checker c);
 	
 	/**
-	 * Test if this Checker is equal to another Checker's String representation.
-	 * @param s String representation of another Checker.
-	 * @return Boolean result of whether the Checker the String is representing and this Checker are equal.
+	 * Tests if this Checker is equal to another Checker's String representation.
+	 * @param s - String representation of another Checker
+	 * @return true if the Checker the given String is representing is equal to this Checker.
 	 */
 	public boolean equals(String s);
 	
 	/**
-	 * Convert this Checker into a String.
-	 * @return String representation of this Checker. Returns an empty String if this Checker is invalid.
+	 * Converts this Checker into a String.
+	 * @return this Checker as a String. Returns an empty String if invalid.
 	 */
 	public String toString();
 

@@ -17,16 +17,16 @@ public class DataParser {
 	private static FileConverter fc;
 	
 	/**
-	 * Construct a DataParser object.
+	 * Creates a DataParser object.
 	 */
 	public DataParser() {
 		fc = new FileConverter();
 	}
 	
 	/**
-	 * Generate a list of TeamData objects from a text file.
-	 * @param fileName String name of the text file to retrieve information from.
-	 * @return ArrayList of TeamData objects generated from the given text file.
+	 * Generates a list of TeamData objects from a text file.
+	 * @param fileName - String name of the text file to retrieve information from
+	 * @return all the TeamData objects generated from the given text file.
 	 */
 	public ArrayList<TeamData> process(String fileName) {
 		ArrayList<TeamData> teams = new ArrayList<TeamData>();

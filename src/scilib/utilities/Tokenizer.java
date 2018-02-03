@@ -11,14 +11,14 @@ import java.util.Scanner;
 public class Tokenizer {
 	
 	/**
-	 * Construct a Tokenizer object.
+	 * Creates a Tokenizer object.
 	 */
 	public Tokenizer() {}
 	
 	/**
-	 * Convert a String into an ArrayList of its space-delimited components.
-	 * @param line String to be converted.
-	 * @return ArrayList of Strings of the space-delimited 'words' from the input String.
+	 * Converts a String into an ArrayList of its space-delimited components.
+	 * @param line - String to be converted
+	 * @return the space-delimited 'words' from the input String.
 	 */
 	public ArrayList<String> tokenize(String line) {
 		ArrayList<String> tokens = new ArrayList<String>();

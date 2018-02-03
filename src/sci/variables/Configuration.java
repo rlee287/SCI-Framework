@@ -19,7 +19,7 @@ public class Configuration {
 	public ArrayList<String> dataTypes;
 	
 	/**
-	 * Construct a Configuration object, and automatically parses data from the config.txt file.
+	 * Creates a Configuration object, and automatically parses data from the config.txt file.
 	 */
 	public Configuration() {
 		fc = new FileConverter();
@@ -32,7 +32,7 @@ public class Configuration {
 	}
 	
 	/**
-	 * Parse data from the config.txt file, overwriting previous values.
+	 * Parses data from the config.txt file, overwriting previous values.
 	 */
 	public void update() {
 		ArrayList<String> lines = fc.convert(dataFile);

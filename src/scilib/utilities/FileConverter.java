@@ -11,14 +11,14 @@ import java.util.ArrayList;
 public class FileConverter {
 	
 	/**
-	 * Construct a FileConverter object.
+	 * Creates a FileConverter object.
 	 */
 	public FileConverter() {}
 	
 	/**
-	 * Convert a text file into an ArrayList of Strings.
-	 * @param fileName String name of the text file to retrieve information from.
-	 * @return ArrayList of Strings for each line in the text file.
+	 * Converts a text file into an ArrayList of Strings.
+	 * @param fileName - String name of the text file to retrieve information from
+	 * @return list of Strings for each line in the text file.
 	 */
 	@SuppressWarnings("resource")
 	public ArrayList<String> convert(String fileName) {
@@ -40,9 +40,9 @@ public class FileConverter {
 	}
 	
 	/**
-	 * Remove all spaces and '%' signs from a String.
-	 * @param input String to compress.
-	 * @return String of the compressed result.
+	 * Removes all spaces and '%' signs from a String.
+	 * @param input - String to compress
+	 * @return the compressed result.
 	 */
 	public String compress(String input) {
 		return input.replace(" ", "").replace("%", "").toLowerCase();

@@ -15,8 +15,8 @@ public class TeamDataComparator implements Comparator<TeamData> {
 	private Sorter sorter;
 	
 	/**
-	 * Construct a TeamDataComparator given a Sorter object as a parameter.
-	 * @param sorter Sorter object to dictate what value to compare the TeamDataObjects by.
+	 * Creates a TeamDataComparator given a Sorter object as a parameter.
+	 * @param sorter - Sorter object to dictate what value to compare the TeamDataObjects by
 	 */
 	public TeamDataComparator(Sorter sorter) {
 		this.sorter = sorter;

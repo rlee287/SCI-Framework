@@ -10,8 +10,8 @@ import scilib.utilities.TeamDataComparator;
 /**
  * Organizer which manages TeamData objects.
  * You can add and remove TeamData objects to this object, and set filters and sorters to organize them.
- * TeamData objects which are being filtered and sorted are part of the TeamData Pool.
- * TeamData objects from the pool which have passed through the Sorter and Filter are part of the active TeamData List.
+ * TeamData objects which are being filtered and sorted are part of the TeamData pool.
+ * TeamData objects from the pool which have passed through the Sorter and Filter are part of the active TeamData list.
  * @author Squeakadoodle
  *
  */
@@ -25,17 +25,17 @@ public class Group {
 	public Filter filter;
 	
 	/**
-	 * Construct a Group object with a given name and no TeamData objects.
-	 * @param name Name by which to reference the Group.
+	 * Creates a Group object with a given name and no TeamData objects.
+	 * @param name - Name by which to reference the Group
 	 */
 	public Group(String name) {
 		this(name, new ArrayList<TeamData>());
 	}
 	
 	/**
-	 * Construct a Group object with a given name and an initial ArrayList of TeamData objects.
-	 * @param name String name by which to reference the Group.
-	 * @param list ArrayList of TeamData objects the Group starts with.
+	 * Creates a Group object with a given name and an initial ArrayList of TeamData objects.
+	 * @param name - String name by which to reference the Group
+	 * @param list - ArrayList of TeamData objects the Group starts with
 	 */
 	public Group(String name, ArrayList<TeamData> list) {
 		this.originalList = new ArrayList<TeamData>(list);
@@ -47,8 +47,8 @@ public class Group {
 	}
 	
 	/**
-	 * Get the TeamData objects which are a part of the active TeamData List.
-	 * @return Shallow copy of the ArrayList of TeamData objects which are part of the active TeamData List.
+	 * Gets the TeamData objects which are a part of the active TeamData list.
+	 * @return a shallow copy of the active TeamData list.
 	 */
 	public ArrayList<TeamData> getTeamList() {
 		update();
@@ -56,16 +56,16 @@ public class Group {
 	}
 	
 	/**
-	 * Get the pool of TeamData objects which are being sorted and filtered.
-	 * @return Shallow copy of the ArrayList of TeamData objects which are being sorted and filtered.
+	 * Gets the pool of TeamData objects which are being sorted and filtered.
+	 * @return a shallow copy of the TeamData pool.
 	 */
 	public ArrayList<TeamData> getTeamPool() {
 		return new ArrayList<TeamData>(originalList);
 	}
 	/**
-	 * Test if a TeamData object is in active TeamData List.
-	 * @param td TeamData object to be tested.
-	 * @return Boolean value representing whether the TeamData object is in the active TeamData List.
+	 * Tests if a TeamData object is in active TeamData list.
+	 * @param td - TeamData object to be tested
+	 * @return true if the given TeamData object is contained in the active TeamData list.
 	 */
 	public boolean teamListContains(TeamData td) {
 		update();
@@ -73,18 +73,18 @@ public class Group {
 	}
 	
 	/**
-	 * Test if a TeamData object is in the TeamData Pool.
-	 * @param td TeamData object to be tested.
-	 * @return Boolean value representing whether the TeamData object is in the TeamData Pool.
+	 * Tests if a TeamData object is in the TeamData pool.
+	 * @param td - TeamData object to be tested
+	 * @return true if the given TeamData is contained in the TeamData pool.
 	 */
 	public boolean teamPoolContains(TeamData td) {
 		return originalList.contains(td);
 	}
 	
 	/**
-	 * Add a Collection of TeamData objects to the TeamData Pool.
-	 * @param teamDataCollection Collection of TeamData objects to add.
-	 * @return Boolean value representing whether the TeamData Pool was modified.
+	 * Adds a Collection of TeamData objects to the TeamData pool.
+	 * @param teamDataCollection - Collection of TeamData objects to add
+	 * @return true if the TeamData pool was modified.
 	 */
 	public boolean addAll(Collection<TeamData> teamDataCollection) {
 		boolean success = false;
@@ -95,9 +95,9 @@ public class Group {
 	}
 	
 	/**
-	 * Add a TeamData object to the TeamData Pool.
-	 * @param td TeamData object to add.
-	 * @return Boolean value representing whether the TeamData Pool was modified.
+	 * Adds a TeamData object to the TeamData pool.
+	 * @param td - TeamData object to add
+	 * @return true if the TeamData pool was modified.
 	 */
 	public boolean add(TeamData td) {
 		if( !originalList.contains(td) ) {
@@ -108,9 +108,9 @@ public class Group {
 	}
 	
 	/**
-	 * Remove a TeamData object from the TeamData Pool
-	 * @param td TeamData object to remove.
-	 * @return Boolean value representing whether the TeamData Pool was modified.
+	 * Removes a TeamData object from the TeamData pool.
+	 * @param td - TeamData object to remove
+	 * @return true if the TeamData pool was modified.
 	 */
 	public boolean remove(TeamData td) {
 		if( originalList.contains(td) ) {
@@ -121,15 +121,15 @@ public class Group {
 	}
 	
 	/**
-	 * Set the TeamData Pool to a given ArrayList of TeamData objects.
-	 * @param teamDataList ArrayList of TeamData objects to be set to.
+	 * Sets the TeamData Pool to a given ArrayList of TeamData objects.
+	 * @param teamDataList - ArrayList of TeamData objects to be set to
 	 */
 	public void set(ArrayList<TeamData> teamDataList) {
 		originalList = new ArrayList<TeamData>(teamDataList);
 	}
 	
 	/**
-	 * Reset the Sorter and Filter of this Group, reverting the active TeamData List to the current TeamData Pool.
+	 * Resets the Sorter and Filter of this Group, reverting the active TeamData List to the current TeamData Pool.
 	 */
 	public void reset() {
 		sorter = new Sorter();

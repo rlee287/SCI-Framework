@@ -13,6 +13,9 @@ import sci.SCI;
  */
 public class HelpModule implements Module {
 	
+	/**
+	 * Creates a HelpModule.
+	 */
 	public HelpModule() {}
 
 	@Override

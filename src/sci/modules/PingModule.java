@@ -10,6 +10,11 @@ import java.util.ArrayList;
  */
 public class PingModule implements Module {
 	
+	/**
+	 * Creates a PingModule.
+	 */
+	public PingModule() {};
+	
 	@Override
 	public String getInvoker() {
 		return "ping";
