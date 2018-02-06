@@ -34,7 +34,8 @@ public class FileConverter {
         }
         catch (Exception E)
         {
-        	return null;
+            E.printStackTrace();
+            return null;
         }
         return lines;
 	}
