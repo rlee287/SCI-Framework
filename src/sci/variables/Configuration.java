@@ -35,7 +35,7 @@ public class Configuration {
 	 * Parses data from the config.txt file, overwriting previous values.
 	 */
 	public void update() {
-		ArrayList<String> lines = fc.convert(dataFile);
+		ArrayList<String> lines = fc.convert("config.txt");
 		for( String line : lines ) {
 			if( line.startsWith("data_file: ") ) {
 				line = line.substring(11);
