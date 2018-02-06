@@ -69,8 +69,12 @@ Updated, extendable framework for the Scouting Computer Interface</description>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<url>https://github.com/Squeakadoodle/SCI-Framework</url>
+	<scm>
+		<url>https://github.com/Squeakadoodle/SCI-Framework</url>
+	</scm>
 </project>
