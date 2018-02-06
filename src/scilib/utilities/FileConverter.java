@@ -1,6 +1,8 @@
 package scilib.utilities;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -32,9 +34,13 @@ public class FileConverter {
                 lines.add(line);
             }
         }
-        catch (Exception E)
+        catch (FileNotFoundException E)
         {
-            E.printStackTrace();
+            System.err.println("Error: Cannot find file "+fileName);
+            return null;
+        }
+        catch (IOException E)
+        {
             return null;
         }
         return lines;
