@@ -11,7 +11,7 @@
 	<description>
 Updated, extendable framework for the Scouting Computer Interface</description>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
