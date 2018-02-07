@@ -9,12 +9,17 @@ cache:
 notifications:
   email: false
 
+before_deploy:
+ - mvn javadoc:javadoc -B
+ - zip -r9 sci_documentation.zip target/site/apidocs
 deploy:
   skip_cleanup: true
   provider: releases
   api_key: "$TOKEN"
   # Version number may change
   file_glob: true
-  file: "target/*-shaded.jar"
+  file:
+  - "target/*-shaded.jar"
+  - sci_documentation.zip
   on:
     tags: true
