@@ -1,9 +1,15 @@
 language: java
 script:
- - mvn package -B
- - echo "$TRAVIS_BUILD_DIR"
- - pwd
+ - mvn package -B # Runs tests as part of package building
 
 cache:
   directories:
   - $HOME/.m2
+
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key: "$TOKEN"
+  file: "target/*-shaded.jar"
+  on:
+    tags: true
