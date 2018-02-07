@@ -1,4 +1,7 @@
 language: java
+
+sudo: false
+
 script:
  - mvn package -B # Runs tests as part of package building
 
@@ -9,9 +12,12 @@ cache:
 notifications:
   email: false
 
-before_deploy:
+before_deploy: # Create and zip javadoc
  - mvn javadoc:javadoc -B
- - zip -r9 sci_documentation.zip target/site/apidocs
+ - pushd target/site/apidocs
+ - zip -r9 sci_documentation.zip .
+ - popd
+
 deploy:
   skip_cleanup: true
   provider: releases
