@@ -15,7 +15,7 @@ notifications:
 before_deploy: # Create and zip javadoc
  - mvn javadoc:javadoc -B
  - pushd target/site/apidocs
- - zip -r9 sci_documentation.zip .
+ - zip -r9 ../../../sci_documentation.zip .
  - popd
 
 deploy:
