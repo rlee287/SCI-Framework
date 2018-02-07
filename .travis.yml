@@ -2,4 +2,8 @@ language: java
 script:
  - mvn package -B
  - echo "$TRAVIS_BUILD_DIR"
+ - pwd
 
+cache:
+  directories:
+  - $HOME/.m2
