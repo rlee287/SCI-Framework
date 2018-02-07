@@ -10,6 +10,8 @@ deploy:
   skip_cleanup: true
   provider: releases
   api_key: "$TOKEN"
+  # Version number may change
+  file_glob: true
   file: "target/*-shaded.jar"
   on:
     tags: true
