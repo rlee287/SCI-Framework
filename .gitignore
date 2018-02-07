@@ -40,3 +40,6 @@ gradle.properties
 gradle/
 gradlew
 gradlew.*
+
+# Maven files
+/target/
