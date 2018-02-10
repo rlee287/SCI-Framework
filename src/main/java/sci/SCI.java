@@ -13,6 +13,11 @@ import scilib.objects.TeamData;
 import scilib.utilities.DataParser;
 import scilib.utilities.Tokenizer;
 
+/**
+ * Launcher class containing the main method.
+ * @author Squeakadoodle
+ *
+ */
 public class SCI {
 	
 	private static ArrayList<TeamData> masterList;
