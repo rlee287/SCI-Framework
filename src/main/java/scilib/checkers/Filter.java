@@ -6,7 +6,7 @@ import java.util.Collection;
 import scilib.objects.TeamData;
 
 /**
- * Checker extension which holds multiple checkers in a list.
+ * Checker object which holds multiple checkers in a list.
  * @author Squeakadoodle
  *
  */
