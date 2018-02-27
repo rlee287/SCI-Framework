@@ -19,13 +19,18 @@ before_deploy: # Create and zip javadoc
  - popd
 
 deploy:
-  skip_cleanup: true
-  provider: releases
-  api_key: "$TOKEN"
-  # Version number may change
-  file_glob: true
-  file:
-  - "target/*-shaded.jar"
-  - sci_documentation.zip
-  on:
-    tags: true
+  - provider: releases
+    skip_cleanup: true
+    api_key: "$TOKEN"
+    # Version number may change
+    file_glob: true
+    file:
+    - "target/*-shaded.jar"
+    - sci_documentation.zip
+    on:
+      tags: true
+  - provider: pages
+    skip_cleanup: true
+    github-token: $TOKEN
+    on:
+      branch: master
