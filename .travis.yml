@@ -32,5 +32,6 @@ deploy:
   - provider: pages
     skip_cleanup: true
     github-token: $TOKEN
+    local-dir: target/site/apidocs
     on:
       branch: master
