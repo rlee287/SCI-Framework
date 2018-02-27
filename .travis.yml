@@ -1,0 +1,31 @@
+language: java
+
+sudo: false
+
+script:
+ - mvn package -B # Runs tests as part of package building
+
+cache:
+  directories:
+  - $HOME/.m2
+
+notifications:
+  email: false
+
+before_deploy: # Create and zip javadoc
+ - mvn javadoc:javadoc -B
+ - pushd target/site/apidocs
+ - zip -r9 ../../../sci_documentation.zip .
+ - popd
+
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key: "$TOKEN"
+  # Version number may change
+  file_glob: true
+  file:
+  - "target/*-shaded.jar"
+  - sci_documentation.zip
+  on:
+    tags: true
