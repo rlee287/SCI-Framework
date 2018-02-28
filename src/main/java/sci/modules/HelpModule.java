@@ -8,7 +8,7 @@ import sci.SCI;
  * Default module which allows the user to see a list of possible commands.
  * Also provides in-depth explanations of a module if prompted.
  * This module is dynamic, and will display all possible commands for modules within the sci.modules package.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class HelpModule implements Module {

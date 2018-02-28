@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Interface of a Module object, which handles given user-inputted commands.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public interface Module {

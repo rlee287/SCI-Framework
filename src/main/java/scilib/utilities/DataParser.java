@@ -9,7 +9,7 @@ import scilib.objects.TeamData;
 
 /**
  * Parser which takes data from a file to create TeamData objects.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class DataParser {

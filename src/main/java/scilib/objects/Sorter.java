@@ -2,7 +2,7 @@ package scilib.objects;
 
 /**
  * Parameters by which to sort a Group of TeamData objects.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Sorter {

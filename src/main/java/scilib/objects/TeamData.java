@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Object which stores data about a team's statistics.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class TeamData {

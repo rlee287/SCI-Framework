@@ -7,7 +7,7 @@ import scilib.utilities.FileConverter;
 
 /**
  * Configuration file which serves as a compiler-readable source of variables from the config.txt file.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Configuration {

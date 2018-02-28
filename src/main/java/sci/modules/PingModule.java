@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Default module which only exists for debugging purposes.
  * It responds with "pong" when the command "ping" is invoked.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class PingModule implements Module {
@@ -16,14 +16,10 @@ public class PingModule implements Module {
 	public PingModule() {};
 	
 	@Override
-	public String getInvoker() {
-		return "ping";
-	}
+	public String getInvoker() {return "ping";}
 
 	@Override
-	public String getName() {
-		return "Ping Module";
-	}
+	public String getName() {return "Ping Module";}
 
 	@Override
 	public String getHelpDoc() {

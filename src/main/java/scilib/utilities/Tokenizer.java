@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * Parser which converts a String into an ArrayList of String 'words,' delimited by spaces.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Tokenizer {

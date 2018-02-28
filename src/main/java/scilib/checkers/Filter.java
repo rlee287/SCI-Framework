@@ -7,7 +7,7 @@ import scilib.objects.TeamData;
 
 /**
  * Checker extension which holds multiple checkers in a list.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Filter implements Checker {

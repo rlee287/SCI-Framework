@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Converter to turn text files into an ArrayList of Strings.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class FileConverter {

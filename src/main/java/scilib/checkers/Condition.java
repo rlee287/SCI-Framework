@@ -4,7 +4,7 @@ import scilib.objects.TeamData;
 
 /**
  * Checker which tests if a TeamData object meets a given condition.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Condition implements Checker {
