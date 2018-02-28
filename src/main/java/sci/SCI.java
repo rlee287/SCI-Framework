@@ -44,7 +44,7 @@ public class SCI {
 	/**
 	 * Initializes all necessary features of the program
 	 */
-	public static void init() {
+	private static void init() {
 		System.out.println("Initializing Scouting Computer Interface...");
 		System.out.println("> Loading modules...");
 		Reflections reflect = new Reflections("sci.modules");
@@ -76,7 +76,7 @@ public class SCI {
 	/**
 	 * Safely shuts down the program
 	 */
-	public static void shutdown() {
+	private static void shutdown() {
 		// TODO: Close all GUIs
 	}
 	
@@ -85,7 +85,7 @@ public class SCI {
 	 * @param line String input of command to process
 	 * @return whether the program should still be running after this iteration
 	 */
-	public static boolean run(String line) { 
+	private static boolean run(String line) { 
 		boolean live = true;
 		String response = process(line);
 		System.out.println(response);
