@@ -33,5 +33,6 @@ deploy:
     skip_cleanup: true
     github-token: $TOKEN
     local-dir: target/site/apidocs
+    verbose: true
     on:
       branch: master

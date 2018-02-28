@@ -9,6 +9,7 @@ import org.reflections.Reflections;
 
 import sci.modules.Module;
 import sci.variables.Configuration;
+import scilib.objects.Group;
 import scilib.objects.TeamData;
 import scilib.utilities.DataParser;
 import scilib.utilities.Tokenizer;
@@ -20,12 +21,12 @@ public class SCI {
 	public static Configuration configuration;
 	public static DecimalFormat df;
 	public static HashMap<String, Module> modules; // groups.get("ALL")
-	public static HashMap<String, ArrayList<TeamData>> groups;
+	public static HashMap<String, Group> groups;
 	public static void main(String[] args) {
 		configuration = new Configuration();
 		df = new DecimalFormat(configuration.decimalFormat);
 		modules = new HashMap<String, Module>();
-		groups = new HashMap<String, ArrayList<TeamData>>();
+		groups = new HashMap<String, Group>();
 		init();
 		System.out.println("Type \"help\" to see a list of commands.");
 		@SuppressWarnings("resource")
@@ -63,7 +64,7 @@ public class SCI {
 		DataParser dp = new DataParser();
 		System.out.println("> Loading Data File...");
 		masterList = dp.process(configuration.dataFile);
-		groups.put("ALL", masterList);
+		groups.put("ALL", new Group("ALL", masterList));
 		System.out.println("=> File: " + configuration.dataFile);
 		System.out.println("> Data File loaded!");
 		System.out.println("Initialization complete.");
