@@ -20,7 +20,7 @@ public class SCI {
 	
 	public static Configuration configuration;
 	public static DecimalFormat df;
-	public static HashMap<String, Module> modules; // groups.get("ALL")
+	public static HashMap<String, Module> modules;
 	public static HashMap<String, Group> groups;
 	public static void main(String[] args) {
 		configuration = new Configuration();
