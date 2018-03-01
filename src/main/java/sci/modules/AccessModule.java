@@ -7,7 +7,7 @@ import scilib.objects.Group;
 import scilib.objects.TeamData;
 
 /**
- * A default module which allows the user to view TeamData objects.
+ * A default module which allows the user to view {@link TeamData} objects.
  * @author Auxiliatrix
  *
  */

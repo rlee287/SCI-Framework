@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Converter to turn text files into an ArrayList of Strings.
+ * Converter to turn text files into an <code>ArrayList</code> of <code>Strings</code>.
  * @author Auxiliatrix
  *
  */
@@ -47,7 +47,7 @@ public class FileConverter {
 	}
 	
 	/**
-	 * Removes all spaces and '%' signs from a String.
+	 * Removes all spaces and '%' signs from a String before converting to lower case.
 	 * @param input - String to compress
 	 * @return the compressed result.
 	 */

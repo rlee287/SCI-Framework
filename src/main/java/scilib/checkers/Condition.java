@@ -3,7 +3,7 @@ package scilib.checkers;
 import scilib.objects.TeamData;
 
 /**
- * Checker which tests if a TeamData object meets a given condition.
+ * Checker which tests if a {@link TeamData} object meets a given condition.
  * @author Auxiliatrix
  *
  */

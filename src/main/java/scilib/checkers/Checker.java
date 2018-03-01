@@ -3,16 +3,16 @@ package scilib.checkers;
 import scilib.objects.TeamData;
 
 /**
- * Interface of a Checker object, which checks if a TeamData object meets its conditions.
+ * Interface of a Checker object, which checks if a {@link TeamData} object meets its conditions.
  * @author Auxiliatrix
  *
  */
 public interface Checker {
 	
 	/**
-	 * Tests if the given TeamData object meets this Checker's condition.
-	 * @param td - TeamData object to be checked against this Checker
-	 * @return true if the given TeamData meets this Checker's condition.
+	 * Tests if the given {@link TeamData} object meets this Checker's condition.
+	 * @param td - {@link TeamData} object to be checked against this Checker
+	 * @return true if the given {@link TeamData} meets this Checker's condition.
 	 */
 	public boolean check(TeamData td);
 	
