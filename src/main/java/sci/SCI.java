@@ -36,13 +36,13 @@ public class SCI {
 		groups = new HashMap<String, Group>();
 		init();
 		System.out.println(configuration.motd);
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
-		System.out.print("SCI@" + configuration.team + ": ");
-		String line = sc.nextLine();
-		while( line.isEmpty() ? true : run(line) ) {
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.print("SCI@" + configuration.team + ": ");
-			line = sc.nextLine();
+			String line = sc.nextLine();
+			while( line.isEmpty() ? true : run(line) ) {
+				System.out.print("SCI@" + configuration.team + ": ");
+				line = sc.nextLine();
+			}
 		}
 		System.out.println("-------------------------------------------");
 		System.out.println("Terminating Scouting Computer Interface...");
@@ -103,7 +103,11 @@ public class SCI {
 	private static boolean run(String line) { 
 		boolean live = true;
 		String response = process(line);
-		System.out.println(response);
+		if (response != null) {
+			System.out.println(response);
+		} else {
+			live = false;
+		}
 		return live;
 	}
 	
