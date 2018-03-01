@@ -8,7 +8,7 @@ import sci.SCI;
 import scilib.objects.TeamData;
 
 /**
- * Parser which takes data from a file to create TeamData objects.
+ * Parser which takes data from a file to create {@link TeamData} objects.
  * @author Auxiliatrix
  *
  */
@@ -24,9 +24,9 @@ public class DataParser {
 	}
 	
 	/**
-	 * Generates a list of TeamData objects from a text file.
+	 * Generates a list of {@link TeamData} objects from a text file.
 	 * @param fileName - String name of the text file to retrieve information from
-	 * @return all the TeamData objects generated from the given text file.
+	 * @return all the {@link TeamData} objects generated from the given text file.
 	 */
 	public ArrayList<TeamData> process(String fileName) {
 		ArrayList<TeamData> teams = new ArrayList<TeamData>();

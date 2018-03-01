@@ -8,10 +8,13 @@ import scilib.checkers.Filter;
 import scilib.utilities.TeamDataComparator;
 
 /**
- * Organizer which manages TeamData objects.
- * You can add and remove TeamData objects to this object, and set filters and sorters to organize them.
- * TeamData objects which are being filtered and sorted are part of the TeamData pool.
- * TeamData objects from the pool which have passed through the Sorter and Filter are part of the active TeamData list.
+ * Organizer which manages {@link TeamData} objects.
+ * 
+ * <p>You can add and remove {@link TeamData} objects to this object,
+ * and set filters and sorters to organize them.</p>
+ * <p>{@link TeamData} objects which are being filtered and sorted are part of the {@link TeamData} pool.
+ * {@link TeamData} objects from the pool which have passed through the {@link Sorter} and {@link Filter}
+ * are part of the active {@link TeamData} list.</p>
  * @author Auxiliatrix
  *
  */

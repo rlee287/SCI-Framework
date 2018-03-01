@@ -6,7 +6,7 @@ import scilib.objects.Sorter;
 import scilib.objects.TeamData;
 
 /**
- * Comparator to compare two TeamData objects.
+ * Comparator to compare two {@link TeamData} objects.
  * @author Auxiliatrix
  *
  */
@@ -15,8 +15,8 @@ public class TeamDataComparator implements Comparator<TeamData> {
 	private Sorter sorter;
 	
 	/**
-	 * Creates a TeamDataComparator given a Sorter object as a parameter.
-	 * @param sorter - Sorter object to dictate what value to compare the TeamDataObjects by
+	 * Creates a TeamDataComparator given a {@link Sorter} object as a parameter.
+	 * @param sorter - {@link Sorter} object to dictate what value to compare the {@link TeamData} objects by
 	 */
 	public TeamDataComparator(Sorter sorter) {
 		this.sorter = sorter;
