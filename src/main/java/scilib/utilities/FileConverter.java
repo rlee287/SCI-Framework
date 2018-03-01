@@ -22,13 +22,10 @@ public class FileConverter {
 	 * @param fileName - String name of the text file to retrieve information from
 	 * @return list of Strings for each line in the text file.
 	 */
-	@SuppressWarnings("resource")
 	public ArrayList<String> convert(String fileName) {
 		ArrayList<String> lines = new ArrayList<String>();
         String line = null;
-        try {
-            FileReader fileReader = new FileReader(fileName);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
             while((line = bufferedReader.readLine()) != null)
             {
                 lines.add(line);

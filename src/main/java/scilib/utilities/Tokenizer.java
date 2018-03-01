@@ -2,6 +2,7 @@ package scilib.utilities;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  * Parser which converts a String into an ArrayList of String 'words,' delimited by spaces.
@@ -22,11 +23,9 @@ public class Tokenizer {
 	 */
 	public ArrayList<String> tokenize(String line) {
 		ArrayList<String> tokens = new ArrayList<String>();
-		@SuppressWarnings("resource")
-		Scanner t = new Scanner(line);
-		t.useDelimiter(" ");
-		while( t.hasNext() ) {
-			tokens.add(t.next());
+		StringTokenizer t = new StringTokenizer(line);
+		while( t.hasMoreTokens() ) {
+			tokens.add(t.nextToken(" "));
 		}
 		return tokens;
 	}

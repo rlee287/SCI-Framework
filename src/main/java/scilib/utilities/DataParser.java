@@ -3,6 +3,7 @@ package scilib.utilities;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import sci.SCI;
 import scilib.objects.TeamData;
@@ -35,11 +36,9 @@ public class DataParser {
 		
 		for( String line : lines ) {
 			if( fc.compress(line).startsWith("teamnumber") ) {
-				@SuppressWarnings("resource")
-				Scanner sc = new Scanner(line);
-				sc.useDelimiter(",");
-				while( sc.hasNext() ) {
-					String next = sc.next();
+				StringTokenizer sc = new StringTokenizer(line);
+				while( sc.hasMoreTokens() ) {
+					String next = sc.nextToken(",");
 					next = fc.compress(next);
 					if( !(next.equals("") || next.equals("teamnumber")) ) {
 						teams.add(new TeamData(next));
@@ -71,11 +70,9 @@ public class DataParser {
 	
 	private ArrayList<Double> parse(String dataType, String line) {
 		ArrayList<Double> parseData = new ArrayList<Double>();
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(line);
-		sc.useDelimiter(",");
-		while( sc.hasNext() ) {
-			String next = sc.next();
+		StringTokenizer sc = new StringTokenizer(line);
+		while( sc.hasMoreTokens() ) {
+			String next = sc.nextToken(",");
 			next = fc.compress(next);
 			if( !(next.equals("") || next.equals(dataType)) ) {
 				parseData.add(Double.parseDouble(next));
