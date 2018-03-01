@@ -154,4 +154,26 @@ public class Group {
 		Arrays.sort(newArray, new TeamDataComparator(sorter));
 		currentList = new ArrayList<TeamData>(Arrays.asList(newArray));
 	}
+	
+	@Override
+	public String toString() {
+		String response = "";
+		response += "Name: " + name + "\n";
+		response += "Sorter: " + sorter.toString() + "\n";
+		response += "Filter: " + filter.toString() + "\n";
+		response += "\n";
+		response += "Teams which match conditions:";
+		for( TeamData td : originalList ) {
+			if( currentList.contains(td) ) {
+				response += "\t" + td.teamNumber + "\n";
+			}
+		}
+		response += "Teams in pool:";
+		for( TeamData td : originalList ) {
+			if( !currentList.contains(td) ) {
+				response += "\t" + td.teamNumber + "\n";
+			}
+		}
+		return response;
+	}
 }

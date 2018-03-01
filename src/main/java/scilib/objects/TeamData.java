@@ -41,4 +41,14 @@ public class TeamData {
 		data.put(dataType, value);
 	}
 	
+	@Override
+	public String toString() {
+		String response = "";
+		response += "Team " + teamNumber + "\n";
+		for( String key : data.keySet() ) {
+			response += "\t" + key + ": " + data.get(key) + "\n";
+		}
+		return response;
+	}
+	
 }

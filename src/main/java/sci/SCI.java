@@ -25,11 +25,13 @@ public class SCI {
 	
 	public static Configuration configuration;
 	public static DecimalFormat df;
+	public static HashMap<String, TeamData> teamAccessMap;
 	public static HashMap<String, Module> modules;
 	public static HashMap<String, Group> groups;
 	public static void main(String[] args) {
 		configuration = new Configuration();
 		df = new DecimalFormat(configuration.decimalFormat);
+		teamAccessMap = new HashMap<String, TeamData>();
 		modules = new HashMap<String, Module>();
 		groups = new HashMap<String, Group>();
 		init();
@@ -72,7 +74,10 @@ public class SCI {
 		DataParser dp = new DataParser();
 		System.out.println("> Loading Data File...");
 		masterList = dp.process(configuration.dataFile);
-		groups.put("ALL", new Group("ALL", masterList));
+		for( TeamData td : masterList ) {
+			teamAccessMap.put(td.teamNumber.toLowerCase(), td);
+		}
+		groups.put("all", new Group("All", masterList));
 		System.out.println("=> File: " + configuration.dataFile);
 		System.out.println("> Data File loaded!");
 		System.out.println("Initialization complete.");
