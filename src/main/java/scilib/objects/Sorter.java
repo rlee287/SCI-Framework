@@ -2,7 +2,7 @@ package scilib.objects;
 
 /**
  * Parameters by which to sort a Group of TeamData objects.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Sorter {
@@ -35,5 +35,11 @@ public class Sorter {
 		this.increasing = increasing;
 	}
 	
-	public String toString() {return "[Sort] " + dataType + "; " + ((increasing) ? "increasing" : "decreasing");}
+	public String toString() {
+		if( dataType.isEmpty() ) {
+			return "None";
+		} else {
+			return "[Sort] " + dataType + "; " + ((increasing) ? "increasing" : "decreasing");
+		}
+	}
 }

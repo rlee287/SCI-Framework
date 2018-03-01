@@ -10,7 +10,7 @@ import sci.SCI;
  * Also provides in-depth explanations of a module if prompted.
  * This module is dynamic, and will display all possible commands
  * for modules within the <code>sci.modules</code> package.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class HelpModule implements Module {

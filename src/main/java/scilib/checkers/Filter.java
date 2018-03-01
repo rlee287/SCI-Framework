@@ -6,8 +6,8 @@ import java.util.Collection;
 import scilib.objects.TeamData;
 
 /**
- * Checker object which holds multiple checkers in a list.
- * @author Squeakadoodle
+ * Checker extension which holds multiple checkers in a list.
+ * @author Auxiliatrix
  *
  */
 public class Filter implements Checker {

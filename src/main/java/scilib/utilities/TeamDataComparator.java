@@ -7,7 +7,7 @@ import scilib.objects.TeamData;
 
 /**
  * Comparator to compare two TeamData objects.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class TeamDataComparator implements Comparator<TeamData> {

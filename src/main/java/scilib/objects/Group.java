@@ -15,7 +15,7 @@ import scilib.utilities.TeamDataComparator;
  * <p>TeamData objects which are being filtered and sorted are part of the TeamData pool.
  * TeamData objects from the pool which have passed through the Sorter and Filter
  * are part of the active TeamData list.</p>
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Group {
@@ -156,5 +156,27 @@ public class Group {
 		TeamData[] newArray = newList.toArray(new TeamData[newList.size()]);
 		Arrays.sort(newArray, new TeamDataComparator(sorter));
 		currentList = new ArrayList<TeamData>(Arrays.asList(newArray));
+	}
+	
+	@Override
+	public String toString() {
+		String response = "";
+		response += "Name: " + name + "\n";
+		response += "Sorter: " + sorter.toString() + "\n";
+		response += "Filter: " + filter.toString() + "\n";
+		response += "\n";
+		response += "Teams which match conditions:\n";
+		for( TeamData td : originalList ) {
+			if( currentList.contains(td) ) {
+				response += "\t" + td.teamNumber + "\n";
+			}
+		}
+		response += "Teams in pool:\n";
+		for( TeamData td : originalList ) {
+			if( !currentList.contains(td) ) {
+				response += "\t" + td.teamNumber + "\n";
+			}
+		}
+		return response;
 	}
 }

@@ -7,7 +7,7 @@ import scilib.utilities.FileConverter;
 
 /**
  * Configuration file which serves as a compiler-readable source of variables from the config.txt file.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Configuration {
@@ -17,6 +17,8 @@ public class Configuration {
 	public String dataFile;
 	public String decimalFormat;
 	public ArrayList<String> dataTypes;
+	public String motd;
+	public String team;
 	
 	/**
 	 * Creates a Configuration object, and automatically parses data from the config.txt file.
@@ -27,6 +29,8 @@ public class Configuration {
 		dataFile = "";
 		decimalFormat = "";
 		dataTypes = new ArrayList<String>();
+		motd = "";
+		team = "";
 		
 		update();
 	}
@@ -56,6 +60,12 @@ public class Configuration {
 						dataTypes.add(next);
 					}
 				}
+			} else if( line.startsWith("motd: ") ) {
+				line = line.substring(6);
+				motd = line;
+			} else if( line.startsWith("team: ") ) {
+				line = line.substring(6);
+				team = line;
 			}
 		}
 	}

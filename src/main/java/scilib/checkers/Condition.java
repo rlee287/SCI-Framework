@@ -4,7 +4,7 @@ import scilib.objects.TeamData;
 
 /**
  * Checker which tests if a TeamData object meets a given condition.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class Condition implements Checker {
@@ -84,7 +84,10 @@ public class Condition implements Checker {
 
 	@Override
 	public String toString() {
-		if( test == Operator.LESS ) {
+		if( dataType.isEmpty() ) {
+			return "None";
+		}
+		else if( test == Operator.LESS ) {
 			return dataType + " < " + target;
 		} else if( test == Operator.LESS_OR_EQUAL ) {
 			return dataType + " <= " + target;

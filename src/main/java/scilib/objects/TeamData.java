@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Object which stores data about a team's statistics.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public class TeamData {
@@ -39,6 +39,16 @@ public class TeamData {
 	 */
 	public void put(String dataType, double value) {
 		data.put(dataType, value);
+	}
+	
+	@Override
+	public String toString() {
+		String response = "";
+		response += "Team " + teamNumber + "\n";
+		for( String key : data.keySet() ) {
+			response += "\t" + key + ": " + data.get(key) + "\n";
+		}
+		return response;
 	}
 	
 }

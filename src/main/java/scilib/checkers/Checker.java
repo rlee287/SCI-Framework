@@ -4,7 +4,7 @@ import scilib.objects.TeamData;
 
 /**
  * Interface of a Checker object, which checks if a TeamData object meets its conditions.
- * @author Squeakadoodle
+ * @author Auxiliatrix
  *
  */
 public interface Checker {
