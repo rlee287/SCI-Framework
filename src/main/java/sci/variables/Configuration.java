@@ -2,6 +2,7 @@ package sci.variables;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import scilib.utilities.FileConverter;
 
@@ -49,11 +50,9 @@ public class Configuration {
 				decimalFormat = line;
 			} else if( line.startsWith("data_types: ") ) {
 				line = line.substring(12);
-				@SuppressWarnings("resource")
-				Scanner sc_dt = new Scanner(line);
-				sc_dt.useDelimiter(",");
-				while( sc_dt.hasNext() ) {
-					String next = fc.compress(sc_dt.next());
+				StringTokenizer sc_dt = new StringTokenizer(line);
+				while( sc_dt.hasMoreTokens() ) {
+					String next = fc.compress(sc_dt.nextToken(","));
 					if( dataTypes.contains(next) ) {
 						System.out.println("WARNING: Duplicate data_type: \"" + next + "\"");
 					} else if( !next.equals("") ) {
