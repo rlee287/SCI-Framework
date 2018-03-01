@@ -35,23 +35,27 @@ public class SCI {
 		modules = new HashMap<String, Module>();
 		groups = new HashMap<String, Group>();
 		init();
-		System.out.println("Type \"help\" to see a list of commands.");
+		System.out.println(configuration.motd);
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
+		System.out.print("SCI@" + configuration.team + ": ");
 		String line = sc.nextLine();
-		while( run(line) ) {
+		while( line.isEmpty() ? true : run(line) ) {
+			System.out.print("SCI@" + configuration.team + ": ");
 			line = sc.nextLine();
 		}
-		
+		System.out.println("-------------------------------------------");
 		System.out.println("Terminating Scouting Computer Interface...");
 		shutdown();
 		System.out.println("Program terminated.");
+		System.out.println("-------------------------------------------");
 	}
 	
 	/**
 	 * Initializes all necessary features of the program
 	 */
 	private static void init() {
+		System.out.println("-------------------------------------------");
 		System.out.println("Initializing Scouting Computer Interface...");
 		System.out.println("> Loading modules...");
 		Reflections reflect = new Reflections("sci.modules");
@@ -81,6 +85,7 @@ public class SCI {
 		System.out.println("=> File: " + configuration.dataFile);
 		System.out.println("> Data File loaded!");
 		System.out.println("Initialization complete.");
+		System.out.println("-------------------------------------------");
 	}
 
 	/**
@@ -133,6 +138,7 @@ public class SCI {
 	public static String subProcess(String line, ArrayList<Module> exclude) {
 		Tokenizer t = new Tokenizer();
 		ArrayList<String> tokens = t.tokenize(line);
+		tokens.remove(0);
 		String invoker = tokens.remove(0);
 		line = line.substring(invoker.length()); // remove the first word and space
 		line.trim();
