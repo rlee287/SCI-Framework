@@ -162,13 +162,13 @@ public class Group {
 		response += "Sorter: " + sorter.toString() + "\n";
 		response += "Filter: " + filter.toString() + "\n";
 		response += "\n";
-		response += "Teams which match conditions:";
+		response += "Teams which match conditions:\n";
 		for( TeamData td : originalList ) {
 			if( currentList.contains(td) ) {
 				response += "\t" + td.teamNumber + "\n";
 			}
 		}
-		response += "Teams in pool:";
+		response += "Teams in pool:\n";
 		for( TeamData td : originalList ) {
 			if( !currentList.contains(td) ) {
 				response += "\t" + td.teamNumber + "\n";

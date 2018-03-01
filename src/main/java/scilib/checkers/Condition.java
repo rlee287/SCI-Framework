@@ -84,7 +84,10 @@ public class Condition implements Checker {
 
 	@Override
 	public String toString() {
-		if( test == Operator.LESS ) {
+		if( dataType.isEmpty() ) {
+			return "None";
+		}
+		else if( test == Operator.LESS ) {
 			return dataType + " < " + target;
 		} else if( test == Operator.LESS_OR_EQUAL ) {
 			return dataType + " <= " + target;
