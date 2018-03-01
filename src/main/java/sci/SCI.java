@@ -114,7 +114,7 @@ public class SCI {
 	 */
 	private static String process(String line) {
 		Tokenizer t = new Tokenizer();
-		ArrayList<String> tokens = t.tokenize(line);
+		ArrayList<String> tokens = t.parse(line);
 		String invoker = tokens.remove(0);
 		line = line.substring(invoker.length()); // remove the first word and space
 		line.trim();
@@ -137,7 +137,7 @@ public class SCI {
 	 */
 	public static String subProcess(String line, ArrayList<Module> exclude) {
 		Tokenizer t = new Tokenizer();
-		ArrayList<String> tokens = t.tokenize(line);
+		ArrayList<String> tokens = t.parse(line);
 		tokens.remove(0);
 		String invoker = tokens.remove(0);
 		line = line.substring(invoker.length()); // remove the first word and space
