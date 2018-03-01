@@ -71,7 +71,9 @@ public class SCI {
 
 			if( ( m != null ) ) {
 				System.out.println("=> Loaded module: " + m.getName());
-				modules.put(m.getInvoker(), m);
+				for( String invoker : m.getInvokers() ) {
+					modules.put(invoker, m);
+				}
 			}
 		}
 		System.out.println("> Modules loaded!");

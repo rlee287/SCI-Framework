@@ -13,7 +13,7 @@ public interface Module {
 	 * Gets the command used to invoke this module.
 	 * @return word used to invoke this module.
 	 */
-	public String getInvoker();
+	public String[] getInvokers();
 	
 	/**
 	 * Gets what this module will be referred to in the code.

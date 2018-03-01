@@ -21,7 +21,7 @@ public class HelpModule implements Module {
 	public HelpModule() {}
 
 	@Override
-	public String getInvoker() {return "help";}
+	public String[] getInvokers() {return new String[]{"help"};}
 	
 	@Override
 	public String getName() {return "Help Module";}

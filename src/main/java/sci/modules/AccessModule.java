@@ -7,7 +7,7 @@ import scilib.objects.Group;
 import scilib.objects.TeamData;
 
 /**
- * A default module which allows the user to view {@link TeamData} objects.
+ * Default module which allows the user to view {@link TeamData} and {@link Group} objects.
  * @author Auxiliatrix
  *
  */
@@ -19,7 +19,7 @@ public class AccessModule implements Module {
 	public AccessModule() {}
 	
 	@Override
-	public String getInvoker() {return "get";}
+	public String[] getInvokers() {return new String[]{"get"};}
 
 	@Override
 	public String getName() {return "AccessModule";}

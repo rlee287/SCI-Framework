@@ -26,7 +26,7 @@ public class PingTest {
     @Test
     public void pingModuleInvoker() {
         Module pingModule = new PingModule();
-        assertEquals(pingModule.getInvoker(),"ping");
+        assertEquals(pingModule.getInvokers(),"ping");
     }
 
     /**

@@ -16,7 +16,7 @@ public class PingModule implements Module {
 	public PingModule() {};
 	
 	@Override
-	public String getInvoker() {return "ping";}
+	public String[] getInvokers() {return new String[]{"ping"};}
 
 	@Override
 	public String getName() {return "Ping Module";}
