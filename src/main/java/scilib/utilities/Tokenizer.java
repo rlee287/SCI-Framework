@@ -17,15 +17,41 @@ public class Tokenizer {
 	public Tokenizer() {}
 	
 	/**
-	 * Converts a String into an ArrayList of its space-delimited components.
+	 * Converts a String into an ArrayList of its bash-style delimited components.
 	 * @param line - String to be converted
-	 * @return the space-delimited 'words' from the input String.
+	 * @return the bash-style delimited 'words' from the input String.
 	 */
-	public ArrayList<String> tokenize(String line) {
+	public ArrayList<String> parse(String line) {
 		ArrayList<String> tokens = new ArrayList<String>();
-		StringTokenizer t = new StringTokenizer(line);
-		while( t.hasMoreTokens() ) {
-			tokens.add(t.nextToken(" "));
+		line += " ";
+		char[] charArray = line.toCharArray();
+		String temp = "";
+		boolean openQuote = false;
+		boolean border = false;
+		for( char c : charArray ) {
+			if( c == ' ' && !openQuote ) {
+				if( !temp.isEmpty() ) {
+					tokens.add(temp);
+				}
+				temp = "";
+				border = false;
+			} else if( c == '"' ) {
+				if( openQuote ) {
+					openQuote = false;
+					if( temp.length() > 0 ) {
+						tokens.add(temp);
+					}
+					temp = "";
+					border = true;
+				} else {
+					openQuote = true;
+				}
+			} else {
+				if( !border ) {
+					temp += c;
+				}
+				border = false;
+			}
 		}
 		return tokens;
 	}
