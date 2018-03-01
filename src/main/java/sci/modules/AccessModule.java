@@ -41,14 +41,14 @@ public class AccessModule implements Module {
 	public String process(String line, ArrayList<String> tokens) {
 		String response = "";
 		if( tokens.size() == 0 ) {
-			response = "\nYou must specify a team or group.";
+			response = "You must specify a team or group.";
 		} else {
 			String type = tokens.get(0);
 			if( type.equalsIgnoreCase("team") || type.equalsIgnoreCase("teams") ) {
 				if( tokens.size() == 1 ) {
+					response += "Here is a list of teams:";
 					for( String team : SCI.teamAccessMap.keySet() ) {
-						response += "Here is a list of teams:";
-						response += "\t" + team + "\n";
+						response += "\n\t" + team;
 					}
 				} else {
 					String teamName = tokens.get(1);
@@ -61,9 +61,9 @@ public class AccessModule implements Module {
 				}
 			} else if( type.equalsIgnoreCase("group") || type.equalsIgnoreCase("groups") ) {
 				if( tokens.size() == 1 ) {
+					response += "Here is a list of groups:";
 					for( String group : SCI.groups.keySet() ) {
-						response += "Here is a list of groups:";
-						response += "\t" + group + "\n";
+						response += "\n\t" + group;
 					}
 				} else {
 					String groupName = tokens.get(1);
