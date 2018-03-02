@@ -24,9 +24,9 @@ public class PingModule implements Module {
 	@Override
 	public String getHelpDoc() {
 		String response = "";
-		response += "___[Ping] Usage___";
+		response += "[Ping] Usage:";
 		response += "\nThe 'ping' command returns \"pong\" when executed.";
-		response += "\n------------------";
+		response += "\n";
 		return response;
 	}
 	

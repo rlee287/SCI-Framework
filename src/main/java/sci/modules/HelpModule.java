@@ -29,11 +29,11 @@ public class HelpModule implements Module {
 	@Override
 	public String getHelpDoc() {
 		String response = "";
-		response += "___[Help] Usage___";
+		response += "[Help] Usage:";
 		response += "\nThe 'help' command gives details on how to use the ScoutingComputerInterface.";
 		response += "\n\thelp\t\tReturns a list of valid commands.";
 		response += "\n\thelp [command]\tGives detailed information about a command.";
-		response += "\n------------------";
+		response += "\n";
 		return response;
 	}
 	

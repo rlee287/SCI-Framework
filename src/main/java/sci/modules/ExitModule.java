@@ -25,9 +25,9 @@ public class ExitModule implements Module {
 	@Override
 	public String getHelpDoc() {
 		String response = "";
-		response += "___[Quit] Usage___";
-		response += "\nThe 'quit' command exits the program.";
-		response += "\n------------------";
+		response += "[Exit] Usage:";
+		response += "\nThe 'exit' command exits the program.";
+		response += "\n";
 		return response;
 	}
 
