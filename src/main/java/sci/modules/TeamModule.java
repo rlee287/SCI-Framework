@@ -21,7 +21,7 @@ public class TeamModule implements Module {
 	public String[] getInvokers() {return new String[]{"team"};}
 
 	@Override
-	public String getName() {return "TeamModule";}
+	public String getName() {return "Team Module";}
 
 	@Override
 	public String getHelpDoc() {
@@ -46,7 +46,7 @@ public class TeamModule implements Module {
 			String teamName = tokens.get(1);
 			TeamData td = SCI.teamAccessMap.get(teamName.toLowerCase());
 			if( td == null ) {
-				response = "You must enter a valid team name.";
+				response = "Error: Invalid team name.";
 			} else {
 				response = td.toString();
 			}

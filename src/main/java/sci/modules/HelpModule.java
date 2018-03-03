@@ -54,7 +54,7 @@ public class HelpModule implements Module {
 				}
 			}
 			if( response.equals("") ) {
-				response += "Command \"" + command + "\" does not exist.";
+				response += "Error: Command \"" + command + "\" does not exist.";
 				response += "\nType \"help\" to see a list of commands.";
 			}
 		}
