@@ -19,7 +19,7 @@ public class ExitModule implements Module {
 
 	@Override
 	public String getName() {
-		return "Quit Module";
+		return "Exit Module";
 	}
 
 	@Override
