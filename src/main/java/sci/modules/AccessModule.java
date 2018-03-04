@@ -22,7 +22,7 @@ public class AccessModule implements Module {
 	public String[] getInvokers() {return new String[]{"get"};}
 
 	@Override
-	public String getName() {return "AccessModule";}
+	public String getName() {return "Access Module";}
 
 	@Override
 	public String getHelpDoc() {
