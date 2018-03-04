@@ -26,21 +26,26 @@ public class SCI {
 	
 	public static Configuration configuration;
 	public static DecimalFormat df;
+	public static Tokenizer t;
 	public static Scanner sc;
 	public static HashMap<String, TeamData> teamAccessMap;
 	public static HashMap<String, Module> modules;
+	public static ArrayList<String[]> invokerSets;
 	public static HashMap<String, Group> groups;
 	public static void main(String[] args) {
 		configuration = new Configuration();
 		df = new DecimalFormat(configuration.decimalFormat);
+		t = new Tokenizer();
 		sc = new Scanner(System.in);
 		teamAccessMap = new HashMap<String, TeamData>();
 		modules = new HashMap<String, Module>();
+		invokerSets = new ArrayList<String[]>();
 		groups = new HashMap<String, Group>();
 		init();
 		System.out.println(configuration.motd);
 		System.out.print("SCI@" + configuration.team + ": ");
 		while( run() ) {
+			System.out.println();
 			System.out.print("SCI@" + configuration.team + ": ");
 		}
 		System.out.println("-------------------------------------------");
@@ -70,6 +75,7 @@ public class SCI {
 
 			if( ( m != null ) ) {
 				System.out.println("=> Loaded module: " + m.getName());
+				invokerSets.add(m.getInvokers());
 				for( String invoker : m.getInvokers() ) {
 					modules.put(invoker, m);
 				}
@@ -82,7 +88,9 @@ public class SCI {
 		for( TeamData td : masterList ) {
 			teamAccessMap.put(td.teamNumber.toLowerCase(), td);
 		}
-		groups.put("all", new Group("All", masterList));
+		Group g = new Group("all", masterList);
+		g.immutable = true;
+		groups.put("all", g);
 		System.out.println("=> File: " + configuration.dataFile);
 		System.out.println("> Data File loaded!");
 		System.out.println("Initialization complete.");
@@ -118,7 +126,6 @@ public class SCI {
 	 */
 	private static String process() {
 		String line = sc.nextLine();
-		Tokenizer t = new Tokenizer();
 		ArrayList<String> tokens = t.parse(line);
 		String invoker = tokens.remove(0);
 		line = line.substring(invoker.length()); // remove the first word and space

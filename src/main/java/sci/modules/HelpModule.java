@@ -42,8 +42,17 @@ public class HelpModule implements Module {
 		String response = "";
 		if( tokens.size() == 0 ) {
 			response += "Here is a list of commands.";
-			for( String s : SCI.modules.keySet() ) {
-				response += "\n\t" + s;
+			for( String[] set : SCI.invokerSets ) {
+				response += "\n\t";
+				boolean first = true;
+				for( String invoker : set ) {
+					if( !first ) {
+						response += "/";
+					} else {
+						first = false;
+					}
+					response += invoker;
+				}
 			}
 			response += "\nFor more information on a command, type \"help <command>\".";
 		} else {

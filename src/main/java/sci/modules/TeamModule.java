@@ -43,7 +43,7 @@ public class TeamModule implements Module {
 				response += "\n\t" + team;
 			}
 		} else {
-			String teamName = tokens.get(1);
+			String teamName = tokens.get(0);
 			TeamData td = SCI.teamAccessMap.get(teamName.toLowerCase());
 			if( td == null ) {
 				response = "Error: Invalid team name.";
