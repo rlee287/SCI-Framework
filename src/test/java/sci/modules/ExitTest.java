@@ -33,7 +33,7 @@ public class ExitTest {
     }
 
     /**
-     * Test module "exit" to ensure that it returns "pong".
+     * Test module "exit" to ensure that it returns null.
      */
     @Test
     public void exitModuleProcess() {
