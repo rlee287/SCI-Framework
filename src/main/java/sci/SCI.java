@@ -23,17 +23,17 @@ public class SCI {
 	
 	private static ArrayList<TeamData> masterList;
 	
-	public static Configuration configuration;
-	public static DecimalFormat df;
-	public static HashMap<String, TeamData> teamAccessMap;
-	public static HashMap<String, Module> modules;
-	public static HashMap<String, Group> groups;
+	public static Configuration configuration = new Configuration();
+	public static DecimalFormat df = new DecimalFormat(configuration.decimalFormat);
+	public static HashMap<String, TeamData> teamAccessMap = new HashMap<>();
+	public static HashMap<String, Module> modules = new HashMap<>();
+	public static HashMap<String, Group> groups = new HashMap<>();
 	public static void main(String[] args) {
-		configuration = new Configuration();
+		/*configuration = new Configuration();
 		df = new DecimalFormat(configuration.decimalFormat);
 		teamAccessMap = new HashMap<String, TeamData>();
 		modules = new HashMap<String, Module>();
-		groups = new HashMap<String, Group>();
+		groups = new HashMap<String, Group>();*/
 		init();
 		System.out.println(configuration.motd);
 		try (Scanner sc = new Scanner(System.in)) {
