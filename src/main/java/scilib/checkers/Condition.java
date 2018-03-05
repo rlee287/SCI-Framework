@@ -1,5 +1,8 @@
 package scilib.checkers;
 
+import java.util.ArrayList;
+
+import sci.SCI;
 import scilib.objects.TeamData;
 
 /**
@@ -81,7 +84,39 @@ public class Condition implements Checker {
 	public boolean equals(String s) {
 		return this.toString().equals(s);
 	}
-
+	
+	/**
+	 * Given a String input, parses it and converts it into a Condition object if the input is valid.
+	 * @param s - String input to create a Condition from
+	 * @return A Condition object based on the input String, null if input is invalid
+	 */
+	public static Condition factory(String s) {
+		ArrayList<String> tokens = SCI.t.parse(s);
+		String type = "";
+		String operator = "";
+		double value = 0D;
+		if( tokens.size() < 3 ) {
+			return null;
+		}
+		if( !SCI.configuration.dataTypes.contains(tokens.get(0)) ) {
+			return null;
+		}
+		else {
+			type = tokens.get(0);
+		}
+		if( !(tokens.get(1).equals("<") || tokens.get(1).equals("<=") || tokens.get(1).equals("=") || tokens.get(1).equals("!") || tokens.get(1).equals(">") || tokens.get(1).equals(">=")) ) {
+			return null;
+		} else {
+			operator = tokens.get(1);
+		}
+		try {
+			value = Double.parseDouble(tokens.get(2));
+		} catch(NumberFormatException n) {
+			return null;
+		}
+		return new Condition(type, operator, value);
+	}
+	
 	@Override
 	public String toString() {
 		if( dataType.isEmpty() ) {

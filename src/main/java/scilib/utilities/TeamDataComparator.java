@@ -27,7 +27,7 @@ public class TeamDataComparator implements Comparator<TeamData> {
 		String dataType = sorter.dataType;
 		boolean increasing = sorter.increasing;
 		if( !dataType.isEmpty() ) {
-			return ((o1.get(dataType) > o2.get(dataType)) ^ increasing) ? 1 : -1;
+			return ((o1.get(dataType) < o2.get(dataType)) ^ increasing) ? 1 : -1;
 		}
 		return 0;
 	}
