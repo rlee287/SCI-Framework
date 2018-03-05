@@ -1,7 +1,6 @@
 package sci.modules;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -52,7 +51,7 @@ public class HelpTest {
         ArrayList<String> listStr = new ArrayList<>();
         Method method = SCI.class.getDeclaredMethod("init");
         method.setAccessible(true);
-        Object r = method.invoke(null);
+        method.invoke(null);
         
         Reflections reflect = new Reflections("sci.modules");
         for( Class<?> c : reflect.getSubTypesOf( sci.modules.Module.class ) ) {
@@ -69,7 +68,7 @@ public class HelpTest {
         }
         Method methodc = SCI.class.getDeclaredMethod("shutdown");
         methodc.setAccessible(true);
-        Object s = method.invoke(null);
+        method.invoke(null);
     }
     
     /**
@@ -118,7 +117,6 @@ public class HelpTest {
      */
     @Test
     public void helpModuleProcessNonExistent() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-        ArrayList<String> listStr = new ArrayList<>();
         Method method = SCI.class.getDeclaredMethod("init");
         method.setAccessible(true);
         method.invoke(null);
