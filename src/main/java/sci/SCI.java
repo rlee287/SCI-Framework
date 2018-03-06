@@ -22,11 +22,6 @@ import scilib.utilities.Tokenizer;
  */
 public class SCI {
 	
-	/*
-	 * TODO: persistence
-	 * TODO: GUI
-	 */
-	
 	private static ArrayList<TeamData> masterList;
 	
 	public static Configuration configuration;
