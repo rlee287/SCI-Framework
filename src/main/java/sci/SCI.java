@@ -99,7 +99,6 @@ public class SCI {
 	
 	/**
 	 * Processes the input and produces and output
-	 * @param line String input of command to process
 	 * @return whether the program should still be running after this iteration
 	 */
 	private static boolean run() { 
