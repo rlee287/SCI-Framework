@@ -25,11 +25,11 @@ public class TokenizerTest {
 	@Test
 	public void testParseWithQuotations() {
 		Tokenizer t = new Tokenizer();
-		ArrayList<String> arr = t.parse("A \"\" \"space \" \" delimited\" emptiness \"\" ");
+		ArrayList<String> arr = t.parse("A \"\" \"space\" \"delimited\" emptiness \"\" ");
 		Iterator<String> iter = arr.iterator();
 		assertEquals("A", iter.next());
-		assertEquals("space ", iter.next());
-		assertEquals(" delimited", iter.next());
+		assertEquals("space", iter.next());
+		assertEquals("delimited", iter.next());
 		assertEquals("emptiness", iter.next());
 		assertFalse(iter.hasNext());
 	}
@@ -46,13 +46,14 @@ public class TokenizerTest {
 	}
 	
 	@Test
-	public void testParseWithQuotations2() {
+	public void testParseWithQuotationsConnected() {
 		Tokenizer t = new Tokenizer();
-		ArrayList<String> arr = t.parse("A \"\" \"space \" \" delimited\"emptiness \"\" ");
+		ArrayList<String> arr = t.parse("A \"\" \"space \" begin\"delimited\"emptiness \"\" ");
 		Iterator<String> iter = arr.iterator();
 		assertEquals("A", iter.next());
 		assertEquals("space ", iter.next());
-		assertEquals(" delimited", iter.next());
+		assertEquals("begin", iter.next());
+		assertEquals("delimited", iter.next());
 		assertEquals("emptiness", iter.next());
 		assertFalse(iter.hasNext());
 	}
