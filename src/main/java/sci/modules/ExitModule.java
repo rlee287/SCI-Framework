@@ -26,7 +26,7 @@ public class ExitModule implements Module {
 	public String getHelpDoc() {
 		String response = "";
 		response += "[Exit] Usage:";
-		response += "\nThe 'exit' command exits the program.";
+		response += "\nThe 'quit', 'exit', or 'close' command exits the program.";
 		response += "\n";
 		return response;
 	}

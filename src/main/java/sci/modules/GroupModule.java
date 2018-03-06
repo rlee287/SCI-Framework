@@ -30,7 +30,7 @@ public class GroupModule implements Module {
 	public String getHelpDoc() {
 		String response = "";
 		response += "[Group] Usage:";
-		response += "\nThe 'group' command allows you to manage Groups.";
+		response += "\nThe 'group' or 'grp' command allows you to manage Groups.";
 		response += "\n\tgroup\t\t\t\t\t\tLists existing Groups.";
 		response += "\n\tgroup [name]\t\t\t\t\tReturns information about the given team";
 		response += "\n\t\t-n, --new\t\t\t\tCreates a Group.";

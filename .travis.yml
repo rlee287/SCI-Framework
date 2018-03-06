@@ -13,7 +13,7 @@ notifications:
   email: false
 
 before_deploy: # Create and zip javadoc
- - mvn javadoc:javadoc -B
+ - mvn javadoc:javadoc javadoc:jar -B
  - pushd target/site/apidocs
  - zip -r9 ../../../sci_documentation.zip .
  - popd
@@ -26,6 +26,7 @@ deploy:
     file_glob: true
     file:
     - "target/*-shaded.jar"
+    - "target/*-javadoc.jar"
     - sci_documentation.zip
     on:
       tags: true

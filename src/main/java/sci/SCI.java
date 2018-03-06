@@ -24,23 +24,15 @@ public class SCI {
 	
 	private static ArrayList<TeamData> masterList;
 	
-	public static Configuration configuration;
-	public static DecimalFormat df;
-	public static Tokenizer t;
-	public static Scanner sc;
-	public static HashMap<String, TeamData> teamAccessMap;
-	public static HashMap<String, Module> modules;
-	public static ArrayList<String[]> invokerSets;
-	public static HashMap<String, Group> groups;
+	public static Configuration configuration = new Configuration();
+	public static DecimalFormat df = new DecimalFormat(configuration.decimalFormat);
+	public static HashMap<String, TeamData> teamAccessMap = new HashMap<>();
+	public static HashMap<String, Module> modules = new HashMap<>();
+	public static ArrayList<String[]> invokerSets = new ArrayList<>();
+	public static HashMap<String, Group> groups = new HashMap<>();
+	public static Tokenizer t = new Tokenizer();
+	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		configuration = new Configuration();
-		df = new DecimalFormat(configuration.decimalFormat);
-		t = new Tokenizer();
-		sc = new Scanner(System.in);
-		teamAccessMap = new HashMap<String, TeamData>();
-		modules = new HashMap<String, Module>();
-		invokerSets = new ArrayList<String[]>();
-		groups = new HashMap<String, Group>();
 		init();
 		System.out.println(configuration.motd);
 		System.out.print("SCI@" + configuration.team + ": ");
@@ -101,12 +93,12 @@ public class SCI {
 	 * Safely shuts down the program
 	 */
 	private static void shutdown() {
+		sc.close();
 		// TODO: Close all GUIs
 	}
 	
 	/**
 	 * Processes the input and produces and output
-	 * @param line String input of command to process
 	 * @return whether the program should still be running after this iteration
 	 */
 	private static boolean run() { 
