@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>SCI-Framework</groupId>
 	<artifactId>SCI-Framework</artifactId>
-	<version>0.9.0-prealpha</version>
+	<version>1.0.0</version>
 	<name>SCI Framework</name>
 	<description>
 Updated, extendable framework for the Scouting Computer Interface</description>
