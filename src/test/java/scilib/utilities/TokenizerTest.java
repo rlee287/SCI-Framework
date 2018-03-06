@@ -45,7 +45,6 @@ public class TokenizerTest {
 		assertFalse(iter.hasNext());
 	}
 	
-	@Ignore
 	@Test
 	public void testParseWithQuotations2() {
 		Tokenizer t = new Tokenizer();
