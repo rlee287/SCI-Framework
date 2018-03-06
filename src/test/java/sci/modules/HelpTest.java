@@ -68,7 +68,7 @@ public class HelpTest {
         }
         Method methodc = SCI.class.getDeclaredMethod("shutdown");
         methodc.setAccessible(true);
-        method.invoke(null);
+        methodc.invoke(null);
     }
     
     /**
@@ -104,7 +104,7 @@ public class HelpTest {
         }
         Method methodc = SCI.class.getDeclaredMethod("shutdown");
         methodc.setAccessible(true);
-        method.invoke(null);
+        methodc.invoke(null);
     }
     
     /**
@@ -128,6 +128,6 @@ public class HelpTest {
         assertTrue(helpModule.process("No NullLens for The Room", modinput).contains("does not exist"));
         Method methodc = SCI.class.getDeclaredMethod("shutdown");
         methodc.setAccessible(true);
-        method.invoke(null);
+        methodc.invoke(null);
     }
 }
