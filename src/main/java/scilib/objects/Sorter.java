@@ -35,6 +35,15 @@ public class Sorter {
 		this.increasing = increasing;
 	}
 	
+	/**
+	 * Creates a Sorter object as a shallow copy of another Sorter.
+	 * @param source - Sorter to create a shallow copy of
+	 */
+	public Sorter( Sorter source ) {
+		this.dataType = source.dataType;
+		this.increasing = source.increasing;
+	}
+	
 	public String toString() {
 		if( dataType.isEmpty() ) {
 			return "None";

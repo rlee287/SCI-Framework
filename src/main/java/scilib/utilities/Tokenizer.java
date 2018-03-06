@@ -1,8 +1,6 @@
 package scilib.utilities;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.StringTokenizer;
 
 /**
  * Parser which converts a String into an ArrayList of String 'words,' delimited by spaces.
@@ -27,14 +25,12 @@ public class Tokenizer {
 		char[] charArray = line.toCharArray();
 		String temp = "";
 		boolean openQuote = false;
-		boolean border = false;
 		for( char c : charArray ) {
 			if( c == ' ' && !openQuote ) {
 				if( !temp.isEmpty() ) {
 					tokens.add(temp);
+					temp = "";
 				}
-				temp = "";
-				border = false;
 			} else if( c == '"' ) {
 				if( openQuote ) {
 					openQuote = false;
@@ -42,15 +38,15 @@ public class Tokenizer {
 						tokens.add(temp);
 					}
 					temp = "";
-					border = true;
 				} else {
+					if( !temp.isEmpty() ) {
+						tokens.add(temp);
+						temp = "";
+					}
 					openQuote = true;
 				}
 			} else {
-				if( !border ) {
-					temp += c;
-				}
-				border = false;
+				temp += c;
 			}
 		}
 		return tokens;

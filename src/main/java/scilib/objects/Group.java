@@ -27,6 +27,8 @@ public class Group {
 	public Sorter sorter;
 	public Filter filter;
 	
+	public boolean immutable;
+	
 	/**
 	 * Creates a Group object with a given name and no TeamData objects.
 	 * @param name - Name by which to reference the Group
@@ -44,9 +46,24 @@ public class Group {
 		this.originalList = new ArrayList<TeamData>(list);
 		this.currentList = new ArrayList<TeamData>();
 		
-		this.name = name;
+		this.name = name.toLowerCase();
 		this.sorter = new Sorter();
 		this.filter = new Filter();
+	}
+	
+	/**
+	 * Creates a Group as a shallow copy of another Group.
+	 * @param name - String name by which to reference the Group
+	 * @param source - Group to create a shallow copy of
+	 */
+	public Group(String name, Group source) {
+		this.name = name.toLowerCase();
+		
+		this.originalList = new ArrayList<TeamData>(source.originalList);
+		this.currentList = new ArrayList<TeamData>(source.currentList);
+		
+		this.sorter = new Sorter(source.sorter);
+		this.filter = new Filter(source.filter);
 	}
 	
 	/**
@@ -111,6 +128,19 @@ public class Group {
 	}
 	
 	/**
+	 * Removes a Collection of TeamData objects to the TeamData pool.
+	 * @param teamDataCollection - Collection of TeamData objects to remove
+	 * @return true if the TeamData pool was modified.
+	 */
+	public boolean removeAll(Collection<TeamData> teamDataCollection) {
+		boolean success = false;
+		for( TeamData td : teamDataCollection ) {
+			success |= remove(td);
+		}
+		return success;
+	}
+	
+	/**
 	 * Removes a TeamData object from the TeamData pool.
 	 * @param td - TeamData object to remove
 	 * @return true if the TeamData pool was modified.
@@ -160,16 +190,15 @@ public class Group {
 	
 	@Override
 	public String toString() {
+		update();
 		String response = "";
 		response += "Name: " + name + "\n";
 		response += "Sorter: " + sorter.toString() + "\n";
 		response += "Filter: " + filter.toString() + "\n";
 		response += "\n";
 		response += "Teams which match conditions:\n";
-		for( TeamData td : originalList ) {
-			if( currentList.contains(td) ) {
-				response += "\t" + td.teamNumber + "\n";
-			}
+		for( TeamData td : currentList ) {
+			response += "\t" + td.teamNumber + "\n";
 		}
 		response += "Teams in pool:\n";
 		for( TeamData td : originalList ) {

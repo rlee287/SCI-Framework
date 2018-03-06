@@ -29,11 +29,11 @@ public class HelpModule implements Module {
 	@Override
 	public String getHelpDoc() {
 		String response = "";
-		response += "___[Help] Usage___";
+		response += "[Help] Usage:";
 		response += "\nThe 'help' command gives details on how to use the ScoutingComputerInterface.";
 		response += "\n\thelp\t\tReturns a list of valid commands.";
 		response += "\n\thelp [command]\tGives detailed information about a command.";
-		response += "\n------------------";
+		response += "\n";
 		return response;
 	}
 	
@@ -42,8 +42,17 @@ public class HelpModule implements Module {
 		String response = "";
 		if( tokens.size() == 0 ) {
 			response += "Here is a list of commands.";
-			for( String s : SCI.modules.keySet() ) {
-				response += "\n\t" + s;
+			for( String[] set : SCI.invokerSets ) {
+				response += "\n\t";
+				boolean first = true;
+				for( String invoker : set ) {
+					if( !first ) {
+						response += "/";
+					} else {
+						first = false;
+					}
+					response += invoker;
+				}
 			}
 			response += "\nFor more information on a command, type \"help <command>\".";
 		} else {
@@ -54,7 +63,7 @@ public class HelpModule implements Module {
 				}
 			}
 			if( response.equals("") ) {
-				response += "Command \"" + command + "\" does not exist.";
+				response += "Error: Command \"" + command + "\" does not exist.";
 				response += "\nType \"help\" to see a list of commands.";
 			}
 		}

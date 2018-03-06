@@ -19,15 +19,15 @@ public class ExitModule implements Module {
 
 	@Override
 	public String getName() {
-		return "Quit Module";
+		return "Exit Module";
 	}
 
 	@Override
 	public String getHelpDoc() {
 		String response = "";
-		response += "___[Quit] Usage___";
+		response += "[Exit] Usage:";
 		response += "\nThe 'quit', 'exit', or 'close' command exits the program.";
-		response += "\n------------------";
+		response += "\n";
 		return response;
 	}
 

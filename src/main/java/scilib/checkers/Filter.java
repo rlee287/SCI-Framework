@@ -21,6 +21,14 @@ public class Filter implements Checker {
 		checkers = new ArrayList<Checker>();
 	}
 	
+	/**
+	 * Creates a Filter object as a shallow copy of another Filter.
+	 * @param source - Filter to create a shallow copy of
+	 */
+	public Filter(Filter source) {
+		checkers = new ArrayList<Checker>(source.checkers);
+	}
+	
 	@Override
 	public boolean check(TeamData td) {
 		for( Checker check : checkers ) {

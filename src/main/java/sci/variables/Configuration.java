@@ -1,7 +1,6 @@
 package sci.variables;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 import scilib.utilities.FileConverter;
@@ -53,10 +52,10 @@ public class Configuration {
 				StringTokenizer sc_dt = new StringTokenizer(line);
 				while( sc_dt.hasMoreTokens() ) {
 					String next = fc.compress(sc_dt.nextToken(","));
-					if( dataTypes.contains(next) ) {
+					if( dataTypes.contains(next.toLowerCase()) ) {
 						System.out.println("WARNING: Duplicate data_type: \"" + next + "\"");
 					} else if( !next.equals("") ) {
-						dataTypes.add(next);
+						dataTypes.add(next.toLowerCase());
 					}
 				}
 			} else if( line.startsWith("motd: ") ) {

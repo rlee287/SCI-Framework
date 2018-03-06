@@ -20,7 +20,7 @@ public class TeamData {
 	public TeamData(String teamNumber) {
 		data = new HashMap<String, Double>();
 
-		this.teamNumber = teamNumber;
+		this.teamNumber = teamNumber.toLowerCase();
 	}
 	
 	/**
