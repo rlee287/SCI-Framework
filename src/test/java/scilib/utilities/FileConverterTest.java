@@ -12,10 +12,19 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * A collection of tests for the FileConverter.
+ * @author rlee287
+ *
+ */
 public class FileConverterTest {
 	private static String fileToRead = "fileToRead_42.txt";
 	private static String fileNonExist = "whyDoYouThinkMyNonexistenceMatters";
 
+	/**
+	 * Set up the file to parse
+	 * @throws IOException
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		try (FileOutputStream in = new FileOutputStream(fileToRead)) {
@@ -23,17 +32,27 @@ public class FileConverterTest {
 		}
 	}
 
+	/**
+	 * Remove the file to parse after testing is complete
+	 * @throws IOException
+	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws IOException {
 		Files.delete(Paths.get(fileToRead));
 	}
 
+	/**
+	 * Test what happens if the file does not exist.
+	 */
 	@Test
 	public void testConvertNoFile() {
 		FileConverter converter = new FileConverter();
 		assertNull(converter.convert(fileNonExist));
 	}
 	
+	/**
+	 * Test that files are converted properly
+	 */
 	@Test
 	public void testConvertFile() {
 		FileConverter converter = new FileConverter();
@@ -44,6 +63,9 @@ public class FileConverterTest {
 		assertFalse(iter.hasNext());
 	}
 
+	/**
+	 * Test for the compress method
+	 */
 	@Test
 	public void testCompress() {
 		assertEquals("iwillignorethe23media",
