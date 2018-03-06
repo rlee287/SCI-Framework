@@ -30,8 +30,8 @@ public class SCI {
 	public static HashMap<String, Module> modules = new HashMap<>();
 	public static ArrayList<String[]> invokerSets = new ArrayList<>();
 	public static HashMap<String, Group> groups = new HashMap<>();
-	public static Tokenizer t;
-	public static Scanner sc;
+	public static Tokenizer t = new Tokenizer();
+	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		init();
 		System.out.println(configuration.motd);
@@ -93,6 +93,7 @@ public class SCI {
 	 * Safely shuts down the program
 	 */
 	private static void shutdown() {
+		sc.close();
 		// TODO: Close all GUIs
 	}
 	
